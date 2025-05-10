@@ -9,16 +9,16 @@ def obtener_informacion_usuario():
 
 def seleccionar_vuelo():
     # Ciudades disponibles
-    ciudades_disponibles = ["Medellín", "Bogotá", "Cartagena"]
+    ciudades_disponibles = ["Medellin", "Bogota", "Cartagena"]
     
     # Matriz de distancias entre ciudades 
     distancias = {
-        ("Medellín", "Bogotá"): 240,
-        ("Medellín", "Cartagena"): 461,
-        ("Bogotá", "Cartagena"): 657
+        ("Medellin", "Bogota"): 240,
+        ("Medellin", "Cartagena"): 461,
+        ("Bogota", "Cartagena"): 657
     }
 
-    print("Ciudades disponibles: Medellín, Bogotá, Cartagena")
+    print("Ciudades disponibles: Medellin, Bogota, Cartagena")
 
     # Validar ciudad de origen
     while True:
@@ -38,7 +38,7 @@ def seleccionar_vuelo():
     distancia = distancias.get((origen, destino)) or distancias.get((destino, origen))
 
     # Validar día de la semana
-    dias_validos = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
+    dias_validos = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
     while True:
         dia_semana = input("Ingrese el día de la semana en que desea viajar: ").strip().lower()
         if dia_semana in dias_validos:
@@ -58,9 +58,9 @@ def seleccionar_vuelo():
 
     # Calcular precio según distancia y día de la semana
     if distancia < 400:
-        precio = 79900 if dia_semana in ["lunes", "martes", "miércoles", "jueves"] else 119900
+        precio = 79900 if dia_semana in ["lunes", "martes", "miercoles", "jueves"] else 119900
     else:
-        precio = 156900 if dia_semana in ["lunes", "martes", "miércoles", "jueves"] else 213000
+        precio = 156900 if dia_semana in ["lunes", "martes", "miercoles", "jueves"] else 213000
 
     return origen, destino, dia_semana, dia_mes, precio
 
@@ -97,6 +97,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Pausa para evitar que la consola se cierre
+input("\nPresiona Enter para salir.")
+
+ 
+
+#  video: https://youtu.be/M6PhE1bk1xE
 
 
 # videos que ayudaron:
